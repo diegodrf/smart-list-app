@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Set Git identity
+        run: |
+          git config --global user.email "deploy-bot@example.com"
+          git config --global user.name "GitHub Action Bot"
+
       - name: Install Dependencies
         run: npm install
 
