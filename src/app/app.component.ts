@@ -4,11 +4,12 @@ import {RepositoryService} from "./services/repository.service";
 import { Item } from './item';
 import {Category} from "./category";
 import {NgClass} from "@angular/common";
+import {ItemComponent} from "./components/item/item.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule, NgClass],
+  imports: [FormsModule, NgClass, ItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [RepositoryService]
@@ -33,8 +34,8 @@ export class AppComponent implements OnInit  {
     });
   }
 
-  toggleDone(item: Item) {
-    item.done = !item.done
+  toggleDone(item: Item, done: boolean) {
+    item.done = done
     this.repositoryService.updateItem(item).subscribe({
       next: (data) => {
         this.getCategories()

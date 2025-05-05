@@ -12,15 +12,14 @@
           <ul class="list-group">
             @for (item of category.items; track item.id) {
               <li class="list-group-item">
-                <div class="input-group">
-                  <input type="text" class="form-control" [(ngModel)]="item.name" [disabled]="item.done">
-                  <button class="btn btn-outline-secondary" type="button"><i class="bi bi-pencil-square"></i></button>
-                  <button class="btn btn-outline-secondary" type="button"
-                          (click)="toggleDone(item)"
-                          [ngClass]="{ 'btn-outline-secondary': item.done, 'btn-outline-primary': !item.done }"><i class="bi bi-check-lg"></i></button>
-                </div>
+                <app-item [item]="item" (onToggleDone)="toggleDone(item, $event)" (onEdited)="toggleDone($event, $event.done)"/>
               </li>
             }
+            <div class="d-flex flex-row-reverse">
+              <div class="p-2">
+                <i class="bi bi-plus-circle"></i>
+              </div>
+            </div>
           </ul>
         </div>
       </div>

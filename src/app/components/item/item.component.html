@@ -1,0 +1,8 @@
+<div class="input-group">
+  <input type="text" class="form-control" [(ngModel)]="item().name" [disabled]="!editMode()">
+  <button class="btn btn-outline-secondary" type="button" (click)="toggleEditMode()">
+    <i class="bi bi-pencil-square"></i></button>
+  <button class="btn btn-outline-secondary" type="button" (click)="toggleDone()">
+  <i class="bi bi-check-lg"></i>
+  </button>
+</div>
