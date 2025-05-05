@@ -3,11 +3,12 @@ import {FormsModule} from "@angular/forms";
 import {RepositoryService} from "./services/repository.service";
 import { Item } from './item';
 import {Category} from "./category";
+import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   providers: [RepositoryService]
