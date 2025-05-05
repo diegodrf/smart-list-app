@@ -20,7 +20,7 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: ng build --prod --base-href "https://diegodrf.github.io/smart-list-app/"
+        run: ng build --base-href "https://diegodrf.github.io/smart-list-app/"
 
       - name: Deploy to gh pages
         run: |
